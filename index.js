@@ -3,7 +3,8 @@ const play = document.querySelector('#play');
 const next = document.querySelector('#next');
 const back = document.querySelector('#back');
 const stop = document.querySelector('#stop');
-const radio = document.querySelector('li');
+//const radio = document.querySelector('li');
+var radiolist = document.getElementsByTagName("li");
 const statio_name = document.querySelector('#station-name');
 let url = 'http://pollux.shoutca.st:8294/stream?listening-from-radio-garden=1559817258870';
 let sound = null
@@ -58,13 +59,13 @@ const stopRadio =()=> {
 
 play.addEventListener('click', playRadio);
 stop.addEventListener('click', stopRadio);
-radio.addEventListener('click', getUrl);
+//radio.addEventListener('click', getUrl);
 setUpRadio();
 
-// for (var i = 0 ; i < radio.length; i++) {
-//     console.log(radio[i]);
-//     radio[i].addEventListener('click', getUrl);
-//   } 
+for (var i = 0 ; i < radiolist.length; i++) {
+    console.log(radiolist[i]);
+    radiolist[i].addEventListener('click', getUrl);
+  } 
 
 
 
